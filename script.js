@@ -1,5 +1,5 @@
 /*
-  Sai Biscoito - Plugin de limpeza do Twitter.
+  Sai Biscoito - Extensão de limpeza do Twitter.
 
   Desenvolvido por Ricardo Serathiuk (@rsrthk)
   ricardo@serathiuk.com
