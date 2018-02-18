@@ -10,9 +10,13 @@
 
 //Filtra tweets por querySelector.
 function filterTweetsByQuerySelector(querySelector) {
-  document.arrive(querySelector, el =>
-    searchParentElement(el).then(parent => parent.style.display = "none")
-  );
+  var onFoundElement = el => searchParentElement(el).then(parent => parent.style.display = "none");
+  document.querySelectorAll(querySelector).forEach(onFoundElement);
+  document.arrive(querySelector, onFoundElement);
+}
+
+function filterByDomain(domain) {
+  filterTweetsByQuerySelector(".TweetTextSize > a[data-expanded-url*='"+domain+"']");
 }
 
 /*
@@ -38,9 +42,10 @@ considerado um tweet de like.
 filterTweetsByQuerySelector(".tweet-context > .Icon--heartBadge");
 
 /*
-Filtra curiouscat.me. Busca nas URL's (elemento A) do tweet e ve se tem alguma do
+Filtra alguns dominios. Busca nas URL's (elemento A) do tweet e ve se tem alguma do
 curiouscat.me. O conteúdo do tweet é a classe CSS TweetTextSize e a query
 a[data-expanded-url*='curiouscat.me'] busca quais possuem URL do curiouscat.
 É utilizado o atributo data-expanded-url pois no href a URL pode vir minificada.
 */
-filterTweetsByQuerySelector(".TweetTextSize > a[data-expanded-url*='curiouscat.me']");
+filterByDomain("curiouscat.me");
+filterByDomain("twcm.me");
