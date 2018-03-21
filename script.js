@@ -49,3 +49,4 @@ a[data-expanded-url*='curiouscat.me'] busca quais possuem URL do curiouscat.
 */
 filterByDomain("curiouscat.me");
 filterByDomain("twcm.me");
+filterByDomain("nomesigue.com");
