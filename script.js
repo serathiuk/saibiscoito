@@ -48,5 +48,14 @@ a[data-expanded-url*='curiouscat.me'] busca quais possuem URL do curiouscat.
 É utilizado o atributo data-expanded-url pois no href a URL pode vir minificada.
 */
 filterByDomain("curiouscat.me");
-filterByDomain("twcm.me");
 filterByDomain("nomesigue.com");
+filterByDomain("rnkpr.com");
+filterByDomain("ask.fm");
+filterByDomain("twcm.me");
+filterByDomain("twcm.co");
+filterByDomain("trueachievements.com");
+filterByDomain("paper.li");
+filterByDomain("untp.beer");
+filterByDomain("fllwrs.com");
+filterByDomain("spoti.fi");
+filterByDomain("instagram.com")

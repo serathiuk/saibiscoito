@@ -4,6 +4,18 @@ Extensão para Google Chrome que limpa a timeline do Twitter removendo conteúdo
 Pode ser instalada em:
 https://chrome.google.com/webstore/detail/sai-biscoito/bpbmjekhedcggimchkohjlblfnmobeom?hl=pt-BR&gl=BR
 
+Versão 0.6 (lista fornecida por @rodratu s2):
+- Filtra o rnkpr.com (Exercícios e beber muito líquido são importantes, mas não queremos saber quando a pessoa faz isso)
+- Filtra o twcm.co (os arrombadx tem mais de 1 domínio)
+- Filtra o trueachievements.com (só nos trofeuzinho ai parça)
+- Filtra o ask.fm (porque sim)
+- Filtra o paper.li (precisamos falar sobre como ninguém liga pros textão que vc curtiu)
+- Filtra o untp.beer
+- Filtra o fllwrs.com (parem de se importar com o número de followers pfvr)
+- Filtra o spoti.fi (Spotify)
+- Filtra o instagram.com (se eu quiser ver o Instagram, vou no Instagram)
+
+
 Versão 0.5:
 - Filtra o nomesigue.com (Ninguém liga para quantos follows e unfollows que vc teve).
 

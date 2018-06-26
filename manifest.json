@@ -4,7 +4,7 @@
   "name": "Sai biscoito",
   "description": "Make Twitter Great Again.",
   "author": "Ricardo Serathiuk (@rsrthk)",
-  "version": "0.5",
+  "version": "0.6",
 
   "icons": { "16": "icon.png",
            "48": "icon.png",
