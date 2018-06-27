@@ -10,9 +10,11 @@
 
 //Filtra tweets por querySelector.
 function filterTweetsByQuerySelector(querySelector) {
-  //var onFoundElement = el => searchParentElement(el).then(parent => parent.style.display = "none");
+  // var onFoundElement = el => searchParentElement(el)
+  //                             .then(parent => parent.style.border = "5px solid red");
+
   var onFoundElement = el => searchParentElement(el)
-                              .then(parent => parent.style.border = "5px solid red");
+                              .then(parent => parent.style.display = "none");
 
   document.querySelectorAll(querySelector).forEach(onFoundElement);
   document.arrive(querySelector, onFoundElement);
