@@ -7,7 +7,7 @@ function save_options() {
   console.log(config);
 
   chrome.storage.sync.set(config, () => {
-    alert("Configura&ccedil;&atilde;o salva com sucesso.");
+    alert("Configuração salva com sucesso.");
   });
 }
 
