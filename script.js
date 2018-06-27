@@ -10,7 +10,10 @@
 
 //Filtra tweets por querySelector.
 function filterTweetsByQuerySelector(querySelector) {
-  var onFoundElement = el => searchParentElement(el).then(parent => parent.style.display = "none");
+  //var onFoundElement = el => searchParentElement(el).then(parent => parent.style.display = "none");
+  var onFoundElement = el => searchParentElement(el)
+                              .then(parent => parent.style.border = "5px solid red");
+
   document.querySelectorAll(querySelector).forEach(onFoundElement);
   document.arrive(querySelector, onFoundElement);
 }
@@ -35,27 +38,45 @@ function searchParentElement(el) {
   return new Promise((resolve, reject) => el != null ? resolve(el) : reject(null));
 }
 
-/*
-Filtra os "fulano curtiu X". A lógica é. Todo tweet que tiver um header com um heartBadge é
-considerado um tweet de like.
-*/
-filterTweetsByQuerySelector(".tweet-context > .Icon--heartBadge");
+//Processa as configurações
+function processa_bloqueio(id, bloqueado) {
+  if(!bloqueado) return;
 
-/*
-Filtra alguns dominios. Busca nas URL's (elemento A) do tweet e ve se tem alguma do
-curiouscat.me. O conteúdo do tweet é a classe CSS TweetTextSize e a query
-a[data-expanded-url*='curiouscat.me'] busca quais possuem URL do curiouscat.
-É utilizado o atributo data-expanded-url pois no href a URL pode vir minificada.
-*/
-filterByDomain("curiouscat.me");
-filterByDomain("nomesigue.com");
-filterByDomain("rnkpr.com");
-filterByDomain("ask.fm");
-filterByDomain("twcm.me");
-filterByDomain("twcm.co");
-filterByDomain("trueachievements.com");
-filterByDomain("paper.li");
-filterByDomain("untp.beer");
-filterByDomain("fllwrs.com");
-filterByDomain("spoti.fi");
-filterByDomain("instagram.com")
+  if("Curtidas" == id) {
+    log("Filtrando Curtidas");
+    filterTweetsByQuerySelector(".tweet-context > .Icon--heartBadge");
+  } else if("Propagandas" == id) {
+    log("Filtrando Propagandas");
+    filterTweetsByQuerySelector(".tweet-context > .Icon--promoted");
+  } else if("Retweets" == id) {
+    log("Filtrando Retweets");
+    filterTweetsByQuerySelector(".tweet-context > .Icon--retweeted");
+  } else {
+    log("Filtrando URL: "+id);
+    filterByDomain(id);
+  }
+}
+
+function log(str) {
+  console.log("Sai Biscoito - "+str);
+}
+
+//Busca as configurações
+chrome.storage.sync.get({
+  "Curtidas": true,
+  "Propagandas": true,
+  "Retweets": false,
+  "curiouscat.me": true,
+  "nomesigue.com": true,
+  "rnkpr.com": true,
+  "ask.fm": true,
+  "twcm.me": true,
+  "twcm.co": true,
+  "trueachievements.com": true,
+  "paper.li": true,
+  "untp.beer": true,
+  "fllwrs.com": true,
+  "spoti.fi": true,
+  "instagram.com": true
+}, items => Object.entries(items)
+              .forEach(([key, value]) => processa_bloqueio(key, value)));
