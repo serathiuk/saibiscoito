@@ -1,27 +1,22 @@
 {
   "manifest_version": 2,
 
-  "name": "Sai biscoito - Versão 0.7",
+  "name": "Sai biscoito - Versão 1.0",
   "description": "Make Twitter Great Again.",
-  "author": "Ricardo Serathiuk (@rsrthk)",
-  "version": "0.7",
-
-  "permissions": [
-    "storage"
-  ],
-
-  "options_ui": {
-    "page": "options.html",
-    "open_in_tab": true
-  },
+  "author": "Ricardo Serathiuk (@serathiuk)",
+  "version": "1.0",
 
   "icons": { "16": "icon.png",
            "48": "icon.png",
           "128": "icon.png" },
 
+  "permissions": [
+    "activeTab"
+  ],
+
   "content_scripts": [
       {
-        "matches": ["*://*.twitter.com/*", "*://twitter.com/*"],
+        "matches": ["*://twitter.com/*"],
         "js": ["arrive.min.js", "script.js"]
       }
     ]

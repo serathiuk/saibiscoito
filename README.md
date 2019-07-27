@@ -4,6 +4,9 @@ Extensão para Google Chrome que limpa a timeline do Twitter removendo conteúdo
 Pode ser instalada em:
 https://chrome.google.com/webstore/detail/sai-biscoito/bpbmjekhedcggimchkohjlblfnmobeom?hl=pt-BR&gl=BR
 
+Versão 1.0:
+- Por causa do novo layout, um novo recomeço. Só remove likes e propagandas. Um novo começo. :)
+
 Versão 0.7:
 - Agora a extensão é configurável. Nas opções no ícone da extensão você poderá desligar alguma filtragem (Tem doido pra tudo).
 - Opção de filtrar tweets promovidos.
